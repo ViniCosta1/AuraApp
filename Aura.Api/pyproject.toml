@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "Vinicius", email = "vinicosta154@hotmail.com"},
 ]
-dependencies = ["fastapi>=0.120.0", "pydantic>=2.12.3"]
+dependencies = ["fastapi>=0.120.0", "pydantic>=2.12.3", "aiosqlite>=0.21.0", "uvicorn[standard]>=0.38.0", "sqlalchemy>=2.0.44", "pydantic-settings>=2.11.0", "passlib[bcrypt]>=1.7.4", "python-jose[cryptography]>=3.5.0", "boto3>=1.40.59"]
 requires-python = "==3.12.*"
 readme = "README.md"
 license = {text = "MIT"}
@@ -13,3 +13,12 @@ license = {text = "MIT"}
 
 [tool.pdm]
 distribution = false
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+    "pytest-asyncio>=1.2.0",
+    "httpx>=0.28.1",
+    "black>=25.9.0",
+    "ruff>=0.14.2",
+]
